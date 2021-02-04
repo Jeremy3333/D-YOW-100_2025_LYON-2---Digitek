@@ -67,10 +67,6 @@ export default {
 </script>
 
 <style scoped>
-.header {
-  border-bottom: 3px solid #a6a6a6;
-  height: 100px;
-}
 .body {
   margin-left: 15%;
   width: 70%;
