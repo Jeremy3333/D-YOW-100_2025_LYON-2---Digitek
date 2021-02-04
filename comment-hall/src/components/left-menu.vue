@@ -13,22 +13,32 @@
           <input type="checkbox" id="places" name="Places" />
           <p>Places</p>
         </div>
+      </label>
+      <label>
         <div class="check">
           <input type="checkbox" id="Rating" name="Rating" />
           <p>Rating</p>
         </div>
+      </label>
+      <label>
         <div class="check">
           <input type="checkbox" id="Popularity" name="Popularity" />
           <p>Popularity</p>
         </div>
+      </label>
+      <label>
         <div class="check">
           <input type="checkbox" id="Discover" name="Discover" />
           <p>Discover</p>
         </div>
+      </label>
+      <label>
         <div class="check">
           <input type="checkbox" id="my-topics" name="my-topics" />
           <p>My topic</p>
         </div>
+      </label>
+      <label>
         <div class="check-last">
           <input type="checkbox" id="shared" name="shared" />
           <p>Shared</p>
@@ -108,7 +118,7 @@ export default {};
 }
 .check {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   height: 30px;
   padding-left: 5px;
   padding-right: 5px;
@@ -116,16 +126,18 @@ export default {};
 }
 .check-last {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   height: 30px;
   padding-left: 5px;
   padding-right: 5px;
 }
 .check p {
   margin-top: 4%;
+  margin-left: 10px;
 }
 .check-last p {
   margin-top: 4%;
+  margin-left: 10px;
 }
 .select {
   margin-left: 20%;

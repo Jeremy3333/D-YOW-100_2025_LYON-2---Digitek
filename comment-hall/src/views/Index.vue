@@ -150,6 +150,8 @@ export default {
 .article-bot img {
   width: 20px;
   padding: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .mid-img {
   border-left: 2px solid #a6a6a6;
