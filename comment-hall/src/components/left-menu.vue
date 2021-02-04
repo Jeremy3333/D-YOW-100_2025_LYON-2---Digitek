@@ -70,7 +70,6 @@ export default {};
   background-color: #f2f2f2;
   width: 20%;
   padding: 1px;
-  height: 100%;
 }
 .create {
   height: 100px;
