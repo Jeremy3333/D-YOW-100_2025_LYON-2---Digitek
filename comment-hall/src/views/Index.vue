@@ -55,7 +55,7 @@
 <script>
 import Menu from "../components/left-menu";
 import Footer from "../components/footer";
-import Header from  "../components/heads"
+import Header from "../components/heads";
 
 export default {
   components: {
@@ -75,7 +75,6 @@ export default {
   margin-left: 15%;
   width: 70%;
   border-right: 2px solid #a6a6a6;
-  border-left: 2px solid #a6a6a6;
   display: flex;
 }
 .main {
