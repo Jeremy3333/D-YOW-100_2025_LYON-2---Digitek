@@ -46,6 +46,7 @@
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </div>
   </div>
@@ -53,9 +54,11 @@
 
 <script>
 import Menu from "../components/left-menu";
+import Footer from "../components/footer";
 export default {
   components: {
-    Menu
+    Menu,
+    Footer
   }
 };
 </script>
