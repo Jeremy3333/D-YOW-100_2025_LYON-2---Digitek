@@ -71,6 +71,7 @@ export default {};
   width: 20%;
   padding: 1px;
   height: 100%;
+  border-left: 2px solid #a6a6a6;
 }
 .create {
   height: 100px;
