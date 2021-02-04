@@ -31,7 +31,7 @@ export default {};
   transform: translate(-50%);
 }
 .but {
-  width: 35%;
+  width: 32.8%;
   border-left: 3px solid #a6a6a6;
   border-right: 3px solid #a6a6a6;
 }
