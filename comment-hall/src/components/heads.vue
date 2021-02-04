@@ -1,0 +1,74 @@
+<template>
+<div class="zoe">
+  <div class="heads">
+    <div class="jeje">
+      <img id="image" src="../assets/logodigidrive.png" alt="logo digidrive">
+    </div>
+    <div class="searchbar">
+      <input type="search" placeholder="Search a topic" id="site-search" name="q"
+        aria-label="Search through site content">
+
+      <button><img src="../assets/loupe.png" alt="loupe"></button>
+    </div>
+    <div class="pp">
+      <img src="../assets/pdp.png" alt="photo de profile non connecter">
+    </div>
+  </div>
+</div>
+</template>
+
+<script>   
+</script>
+
+<style scoped>
+.zoe {
+  height: 115px;
+  border-bottom: 5px solid #999999;
+}
+.heads {
+  width: 76%;
+  margin-left: 15%;
+  display: flex;
+  justify-content: space-between;
+}
+.jeje {
+  width: 14%;
+  margin-top: 0.2%;
+}
+.searchbar {
+  width: 65%;
+  margin-top: 1.8%;
+  display: flex;
+  flex-direction: row;
+}
+.searchbar button{
+  height: 9%;
+  width: 20%;
+  border-color: rgba(90, 203, 255, 0);
+  border-radius: 200px;
+  transform: translate(-30%);
+  background-color: rgb(0, 195, 255);
+}
+.pp img{
+  height: 13%;
+  margin-top: 1.5%;
+  border-radius: 10px;
+  border: 5px solid #c2b6d2;
+}
+button img{
+  height: 50%;
+}
+#site-search {
+  border-color: rgba(90, 203, 255, 0);
+  background-color: rgb(228, 228, 228);
+  height: 9%;
+  width: 100%;
+  border-radius: 200px;
+  font-size: 110%;
+  padding-left: 2%;
+}
+#image {
+  height: 14.6%;
+}
+</style>
+  // border: 1px solid rgb(255, 0, 0); 
