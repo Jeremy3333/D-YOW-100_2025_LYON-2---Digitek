@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="header"></div>
+    <Header />
     <div class="body">
       <Menu />
       <div class="main">
@@ -55,10 +55,13 @@
 <script>
 import Menu from "../components/left-menu";
 import Footer from "../components/footer";
+import Header from  "../components/heads"
+
 export default {
   components: {
     Menu,
-    Footer
+    Footer,
+    Header
   }
 };
 </script>

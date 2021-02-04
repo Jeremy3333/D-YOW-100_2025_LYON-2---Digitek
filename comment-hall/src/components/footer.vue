@@ -19,7 +19,7 @@ export default {};
   height: 50px;
   width: 56%;
   background-color: #ededed;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   display: flex;
   justify-content: left;

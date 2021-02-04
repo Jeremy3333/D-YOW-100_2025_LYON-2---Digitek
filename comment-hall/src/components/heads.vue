@@ -22,22 +22,22 @@
 
 <style scoped>
 .zoe {
-  height: 115px;
-  border-bottom: 5px solid #999999;
+  height: 100px;
+  border-bottom: 3px solid #999999;
 }
 .heads {
   width: 76%;
-  margin-left: 15%;
+  margin-left: 16%;
   display: flex;
   justify-content: space-between;
 }
 .jeje {
-  width: 14%;
+  width: 12%;
   margin-top: 0.2%;
 }
 .searchbar {
   width: 65%;
-  margin-top: 1.8%;
+  margin-top: 1.2%;
   display: flex;
   flex-direction: row;
 }
@@ -50,7 +50,7 @@
   background-color: rgb(0, 195, 255);
 }
 .pp img{
-  height: 13%;
+  height: 11.2%;
   margin-top: 1.5%;
   border-radius: 10px;
   border: 5px solid #c2b6d2;
@@ -68,7 +68,7 @@ button img{
   padding-left: 2%;
 }
 #image {
-  height: 14.6%;
+  height: 12.7%;
 }
 </style>
   // border: 1px solid rgb(255, 0, 0); 
