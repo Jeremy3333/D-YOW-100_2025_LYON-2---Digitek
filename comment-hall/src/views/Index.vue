@@ -80,6 +80,7 @@ export default {
 }
 .main {
   width: 80%;
+  height: 100%;
 }
 .main-top {
   display: flex;
