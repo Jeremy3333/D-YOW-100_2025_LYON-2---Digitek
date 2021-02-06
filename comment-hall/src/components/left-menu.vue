@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
     <div class="create">
-      <p>create post</p>
+      <a href="/create">create post</a>
     </div>
     <div class="separation"></div>
     <div class="menu-title">
@@ -72,7 +72,7 @@ export default {};
   padding: 1px;
 }
 .create {
-  height: 100px;
+  height: 60px;
   width: 200px;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -82,11 +82,13 @@ export default {};
   color: white;
   text-align: center;
   padding: 1px;
+  padding-top: 15%;
   border-radius: 5px;
   border: 3px solid #715696;
 }
-.create p {
-  margin-top: 20%;
+.create a {
+  text-decoration: none;
+  color: white;
 }
 .separation {
   border: 1px solid #8973a7;

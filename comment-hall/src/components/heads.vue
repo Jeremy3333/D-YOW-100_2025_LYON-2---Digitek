@@ -1,24 +1,33 @@
 <template>
-<div class="zoe">
-  <div class="heads">
-    <div class="jeje">
-      <img id="image" src="../assets/logodigidrive.png" alt="logo digidrive">
-    </div>
-    <div class="searchbar">
-      <input type="search" placeholder="Search a topic" id="site-search" name="q"
-        aria-label="Search through site content">
-
-      <button><img src="../assets/loupe.png" alt="loupe"></button>
-    </div>
-    <div class="pp">
-      <img src="../assets/pdp.png" alt="photo de profile non connecter">
+  <div class="zoe">
+    <div class="heads">
+      <div class="jeje">
+        <a href="/">
+          <img
+            id="image"
+            src="../assets/logodigidrive.png"
+            alt="logo digidrive"
+          />
+        </a>
+      </div>
+      <div class="searchbar">
+        <input
+          type="search"
+          placeholder="Search a topic"
+          id="site-search"
+          name="q"
+          aria-label="Search through site content"
+        />
+        <button><img src="../assets/loupe.png" alt="loupe" /></button>
+      </div>
+      <div class="pp">
+        <img src="../assets/pdp.png" alt="photo de profile non connecter" />
+      </div>
     </div>
   </div>
-</div>
 </template>
 
-<script>   
-</script>
+<script></script>
 
 <style scoped>
 .zoe {
@@ -41,7 +50,7 @@
   display: flex;
   flex-direction: row;
 }
-.searchbar button{
+.searchbar button {
   height: 9%;
   width: 20%;
   border-color: rgba(90, 203, 255, 0);
@@ -49,13 +58,13 @@
   transform: translate(-30%);
   background-color: rgb(0, 195, 255);
 }
-.pp img{
+.pp img {
   height: 11.2%;
   margin-top: 1.5%;
   border-radius: 10px;
   border: 5px solid #c2b6d2;
 }
-button img{
+button img {
   height: 50%;
 }
 #site-search {
@@ -71,4 +80,3 @@ button img{
   height: 12.7%;
 }
 </style>
-  // border: 1px solid rgb(255, 0, 0); 

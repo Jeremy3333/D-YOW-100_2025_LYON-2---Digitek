@@ -75,6 +75,7 @@ export default {
   margin-left: 15%;
   width: 70%;
   border-right: 2px solid #a6a6a6;
+  border-left: 2px solid #a6a6a6;
   display: flex;
 }
 .main {
