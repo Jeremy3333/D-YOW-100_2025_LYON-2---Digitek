@@ -25,6 +25,10 @@
             illo similique velit expedita ullam quaerat modi repellendus culpa
             provident odio nulla. Earum!
           </p>
+          <div class="com">
+            <img class="like" src="../assets/img/hearts.png" />
+            <img class="comment" src="../assets/img/comment.png" />
+          </div>
         </div>
         <Footer />
       </div>
@@ -77,11 +81,12 @@ export default {
   padding: 20px;
   display: flex;
   justify-content: space-between;
+  text-align: left;
 }
 .auth {
-  padding-top: 15px;
   display: flex;
   text-decoration: none;
+  flex-direction: column;
 }
 .auth p {
   color: red;
@@ -102,5 +107,13 @@ export default {
 }
 .img img {
   width: 100%;
+}
+.com {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.com img {
+  width: 10%;
 }
 </style>
