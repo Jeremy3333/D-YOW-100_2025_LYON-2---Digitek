@@ -1,8 +1,10 @@
 <template>
   <div class="menu">
-    <div class="create">
-      <a href="/create">create post</a>
-    </div>
+    <a href="/create">
+      <div class="create">
+        <p>create post</p>
+      </div>
+    </a>
     <div class="separation"></div>
     <div class="menu-title">
       <p>Refine the search</p>
@@ -66,6 +68,9 @@ export default {};
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+}
 .menu {
   background-color: #f2f2f2;
   width: 20%;
@@ -86,7 +91,7 @@ export default {};
   border-radius: 5px;
   border: 3px solid #715696;
 }
-.create a {
+.create p {
   text-decoration: none;
   color: white;
 }
@@ -103,9 +108,9 @@ export default {};
   margin-right: 10%;
   border-radius: 5px;
   text-align: center;
-  color: #9397a0;
   background-color: #e2e2e2;
   padding: 1px;
+  border: 1px solid black;
 }
 .menu-title p {
   margin-top: 5%;

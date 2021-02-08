@@ -1,8 +1,10 @@
 <template>
   <div class="menu">
-    <div class="create">
-      <p>create post</p>
-    </div>
+    <a href="/create">
+      <div class="create">
+        <p>create post</p>
+      </div>
+    </a>
     <div class="separation"></div>
     <div class="menu-title">
       <p>Preview</p>
@@ -60,6 +62,9 @@ export default {};
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+}
 .menu {
   background-color: #f2f2f2;
   width: 37%;
@@ -82,7 +87,6 @@ export default {};
 .article {
   width: 80%;
   margin-left: 10%;
-  margin-top: 30px;
   background-color: #ededed;
   border-radius: 5px;
   padding: 1px;
@@ -124,7 +128,6 @@ export default {};
   background-color: #8bc8db;
   width: 80%;
   margin-left: 10%;
-  padding-top: 10px;
   margin-bottom: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -143,9 +146,9 @@ export default {};
   margin-right: 10%;
   border-radius: 5px;
   text-align: center;
-  color: #9397a0;
   background-color: #e2e2e2;
   padding: 1px;
+  border: 1px solid black;
 }
 .menu-title p {
   margin-top: 5%;
@@ -187,7 +190,7 @@ export default {};
   margin-bottom: 50px;
 }
 .policy {
-  margin-top: 30px;
+  margin-top: 60px;
   height: 30px;
   background-color: #2b59a2;
   width: 200px;

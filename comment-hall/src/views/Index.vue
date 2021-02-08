@@ -45,6 +45,17 @@
               <img src="../assets/img/share.png" />
             </div>
           </div>
+          <div class="article">
+            <div class="img">
+              <img src="../assets/img/temple.jpeg" />
+            </div>
+            <p>Greek Temple</p>
+            <div class="article-bot">
+              <img src="../assets/img/hearts.png" />
+              <img class="mid-img" src="../assets/img/comment.png" />
+              <img src="../assets/img/share.png" />
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
@@ -119,7 +130,7 @@ export default {
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
 }
@@ -131,6 +142,7 @@ export default {
   border-radius: 5px;
   padding: 1px;
   text-align: center;
+  border: 1px solid #a6a6a6;
 }
 .article p {
   margin: 10px;
