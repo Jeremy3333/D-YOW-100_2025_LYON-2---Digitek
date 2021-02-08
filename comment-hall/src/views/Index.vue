@@ -16,7 +16,7 @@
             <div class="img">
               <img src="../assets/img/temple.jpeg" />
             </div>
-            <p>Greek Temple</p>
+            <a href="/post"><p>Greek Temple</p></a>
             <div class="article-bot">
               <img src="../assets/img/hearts.png" />
               <img class="mid-img" src="../assets/img/comment.png" />
@@ -78,9 +78,9 @@ export default {
 </script>
 
 <style scoped>
-.header {
-  border-bottom: 3px solid #a6a6a6;
-  height: 100px;
+a {
+  color: black;
+  text-decoration: none;
 }
 .body {
   margin-left: 15%;
@@ -162,6 +162,7 @@ export default {
 }
 .article-bot {
   border-top: 3px solid #a6a6a6;
+  margin-top: 10px;
 }
 .article-bot img {
   width: 20px;
