@@ -19,7 +19,10 @@
             <img src="../assets/img/temple.jpeg" />
           </div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, cupiditate ratione debitis est obcaecati iure accusantium recusandae illo similique velit expedita ullam quaerat modi repellendus culpa provident odio nulla. Earum!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi,
+            cupiditate ratione debitis est obcaecati iure accusantium recusandae
+            illo similique velit expedita ullam quaerat modi repellendus culpa
+            provident odio nulla. Earum!
           </p>
         </div>
         <Footer />
@@ -87,7 +90,7 @@ export default {
   height: 215px;
   overflow: hidden;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 .img img {
   width: 100%;
