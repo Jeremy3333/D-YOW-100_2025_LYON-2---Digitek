@@ -9,6 +9,7 @@
           <div class="info">
             <div class="auth">
               <p>Jade23</p>
+              <a href="#">www.j'aimel'argent.com</a>
             </div>
             <div class="like-share">
               <div class="like">124 likes</div>
@@ -79,7 +80,14 @@ export default {
 }
 .auth {
   padding-top: 15px;
+  display: flex;
+  text-decoration: none;
+}
+.auth p {
   color: red;
+}
+.auth a {
+  text-decoration: none;
 }
 .img {
   position: relative;
