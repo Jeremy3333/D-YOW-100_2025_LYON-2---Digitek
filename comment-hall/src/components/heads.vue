@@ -2,7 +2,7 @@
 <div class="zoe">
   <div class="heads">
     <div class="jeje">
-      <img id="image" src="../assets/logodigidrive.png" alt="logo digidrive">
+      <a href="/"><img id="image" src="../assets/logodigidrive.png" alt="logo digidrive"></a>
     </div>
     <div class="searchbar">
       <input type="search" placeholder="Search a topic" id="site-search" name="q"
@@ -11,7 +11,7 @@
       <button><img src="../assets/loupe.png" alt="loupe"></button>
     </div>
     <div class="pp">
-      <img src="../assets/pdp.png" alt="photo de profile non connecter">
+      <a href="/login"><img src="../assets/pdp.png" alt="photo de profile non connecter"></a>
     </div>
   </div>
 </div>
