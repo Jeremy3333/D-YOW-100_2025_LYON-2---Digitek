@@ -3,7 +3,7 @@
     <div class="but">
       <img src="../assets/img/home.png" />
     </div>
-    <div class="but">
+    <div class="but" @click="profil">
       <img src="../assets/img/comment2.png" />
     </div>
     <div class="but">
@@ -12,7 +12,13 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+    profil: function() {
+      window.location.href = "/profil";
+    }
+  }
+};
 </script>
 <style scoped>
 .footer {

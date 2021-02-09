@@ -82,6 +82,8 @@ export default {
   padding-top: 15px;
   display: flex;
   text-decoration: none;
+  flex-direction: column;
+  text-align: left;
 }
 .auth p {
   color: red;

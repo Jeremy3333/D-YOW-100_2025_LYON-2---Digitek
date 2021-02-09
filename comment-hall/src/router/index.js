@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Index from "../views/Index.vue";
 import Create from "../views/create.vue";
 import Post from "../views/post.vue";
+import Profil from "../views/Profil.vue";
 import Login from "../views/login.vue";
 
 const routes = [
@@ -21,12 +22,16 @@ const routes = [
     component: Post
   },
   {
+    path: "/profil",
+    name: "Profil",
+    component: Profil
+  },
+  {
     path: "/login",
     name: "Login",
     component: Login
   }
 ];
-
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

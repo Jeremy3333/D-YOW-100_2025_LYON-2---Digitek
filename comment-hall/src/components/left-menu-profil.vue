@@ -1,63 +1,17 @@
 <template>
   <div class="menu">
-    <a href="/create">
-      <div class="create">
-        <p>create post</p>
-      </div>
-    </a>
-    <div class="separation"></div>
-    <div class="menu-title">
-      <p>Refine the search</p>
+    <h2>User<br />Information</h2>
+    <h3>Username:</h3>
+    <p>Geraldine Poutine</p>
+    <h3>Email:</h3>
+    <p>Geraldine.P@gmail.com</p>
+    <h3>City:</h3>
+    <p>Toulouse</p>
+    <h3>Age:</h3>
+    <p>22 years old</p>
+    <div class="create">
+      <p>Modify</p>
     </div>
-    <div class="ordre">
-      <label>
-        <div class="check">
-          <input type="checkbox" id="places" name="Places" />
-          <p>Places</p>
-        </div>
-      </label>
-      <label>
-        <div class="check">
-          <input type="checkbox" id="Rating" name="Rating" />
-          <p>Rating</p>
-        </div>
-      </label>
-      <label>
-        <div class="check">
-          <input type="checkbox" id="Popularity" name="Popularity" />
-          <p>Popularity</p>
-        </div>
-      </label>
-      <label>
-        <div class="check">
-          <input type="checkbox" id="Discover" name="Discover" />
-          <p>Discover</p>
-        </div>
-      </label>
-      <label>
-        <div class="check">
-          <input type="checkbox" id="my-topics" name="my-topics" />
-          <p>My topic</p>
-        </div>
-      </label>
-      <label>
-        <div class="check-last">
-          <input type="checkbox" id="shared" name="shared" />
-          <p>Shared</p>
-        </div>
-      </label>
-    </div>
-    <div class="separation"></div>
-    <div class="menu-title">
-      <p>Categories</p>
-    </div>
-    <select class="select" name="categories" id="Categories">
-      <option value="">All</option>
-      <option value="culture">Culture</option>
-      <option value="sport">Sport</option>
-      <option value="food">Food</option>
-      <option value="Others">others</option>
-    </select>
     <div class="separation"></div>
     <div class="policy">Policy Privacy</div>
   </div>
@@ -71,25 +25,32 @@ export default {};
 a {
   text-decoration: none;
 }
+h2 {
+  margin-top: 15%;
+}
+h3 {
+  margin-top: 15%;
+}
 .menu {
   background-color: #f2f2f2;
   width: 20%;
   padding: 1px;
+  text-align: center;
 }
 .create {
-  height: 60px;
-  width: 200px;
+  height: 55px;
+  width: 180px;
   margin-top: 50px;
   margin-bottom: 50px;
   margin-left: 50%;
   transform: translate(-50%);
-  background-color: #8bc8db;
+  background-color: #8d74b1;
   color: white;
   text-align: center;
   padding: 1px;
   padding-top: 15%;
   border-radius: 5px;
-  border: 3px solid #715696;
+  border: 3px solid #cec8de;
 }
 .create p {
   text-decoration: none;
