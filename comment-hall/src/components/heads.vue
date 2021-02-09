@@ -21,7 +21,9 @@
         <button><img src="../assets/img/loupe.png" alt="loupe" /></button>
       </div>
       <div class="pp">
-        <img src="../assets/img/pdp.png" alt="photo de profile non connecter" />
+        <a href="/login">
+          <img src="../assets/img/pdp.png" alt="photo de profile non connecter" />
+        </a>
       </div>
     </div>
   </div>
