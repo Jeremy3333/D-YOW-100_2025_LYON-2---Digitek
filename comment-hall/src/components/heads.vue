@@ -5,7 +5,7 @@
         <a href="/">
           <img
             id="image"
-            src="../assets/logodigidrive.png"
+            src="../assets/img/logodigidrive.png"
             alt="logo digidrive"
           />
         </a>
@@ -18,10 +18,10 @@
           name="q"
           aria-label="Search through site content"
         />
-        <button><img src="../assets/loupe.png" alt="loupe" /></button>
+        <button><img src="../assets/img/loupe.png" alt="loupe" /></button>
       </div>
       <div class="pp">
-        <img src="../assets/pdp.png" alt="photo de profile non connecter" />
+        <img src="../assets/img/pdp.png" alt="photo de profile non connecter" />
       </div>
     </div>
   </div>
