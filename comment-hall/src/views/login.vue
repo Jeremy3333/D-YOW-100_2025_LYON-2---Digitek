@@ -90,7 +90,7 @@ export default {
 .footer {
   height: 50px;
   width: 70%;
-  background-color: #ededed;
+  background-color: #ededed00;
   position: fixed;
   bottom: 0;
   display: flex;
