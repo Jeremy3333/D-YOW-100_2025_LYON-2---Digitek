@@ -1,30 +1,20 @@
 <template>
-  <div class="zoe">
-    <div class="heads">
-      <div class="jeje">
-        <a href="/">
-          <img
-            id="image"
-            src="../assets/logodigidrive.png"
-            alt="logo digidrive"
-          />
-        </a>
-      </div>
-      <div class="searchbar">
-        <input
-          type="search"
-          placeholder="Search a topic"
-          id="site-search"
-          name="q"
-          aria-label="Search through site content"
-        />
-        <button><img src="../assets/loupe.png" alt="loupe" /></button>
-      </div>
-      <div class="pp">
-        <img src="../assets/pdp.png" alt="photo de profile non connecter" />
-      </div>
+<div class="zoe">
+  <div class="heads">
+    <div class="jeje">
+      <a href="/"><img id="image" src="../assets/logodigidrive.png" alt="logo digidrive"></a>
+    </div>
+    <div class="searchbar">
+      <input type="search" placeholder="Search a topic" id="site-search" name="q"
+        aria-label="Search through site content">
+
+      <button><img src="../assets/loupe.png" alt="loupe"></button>
+    </div>
+    <div class="pp">
+      <a href="/login"><img src="../assets/pdp.png" alt="photo de profile non connecter"></a>
     </div>
   </div>
+</div>
 </template>
 
 <script></script>
