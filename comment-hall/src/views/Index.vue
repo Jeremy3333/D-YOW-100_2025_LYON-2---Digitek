@@ -3,6 +3,9 @@
     <Header />
     <div class="body">
       <Menu />
+      <div v-if="!load">
+        {{ getpost() }}
+      </div>
       <div class="main">
         <div class="main-top">
           <div class="main-title">Recommended Post</div>
@@ -12,44 +15,13 @@
           </div>
         </div>
         <div class="grid">
-          <div class="article">
+          <div class="article" v-for="(post, index) in posts" :key="index">
             <div class="img">
-              <img src="../assets/img/temple.jpeg" />
+              <img :src="img(post.img)" />
             </div>
-            <a href="/post"><p>Greek Temple</p></a>
-            <div class="article-bot">
-              <img src="../assets/img/hearts.png" />
-              <img class="mid-img" src="../assets/img/comment.png" />
-              <img src="../assets/img/share.png" />
-            </div>
-          </div>
-          <div class="article">
-            <div class="img">
-              <img src="../assets/img/temple.jpeg" />
-            </div>
-            <p>Greek Temple</p>
-            <div class="article-bot">
-              <img src="../assets/img/hearts.png" />
-              <img class="mid-img" src="../assets/img/comment.png" />
-              <img src="../assets/img/share.png" />
-            </div>
-          </div>
-          <div class="article">
-            <div class="img">
-              <img src="../assets/img/temple.jpeg" />
-            </div>
-            <p>Greek Temple</p>
-            <div class="article-bot">
-              <img src="../assets/img/hearts.png" />
-              <img class="mid-img" src="../assets/img/comment.png" />
-              <img src="../assets/img/share.png" />
-            </div>
-          </div>
-          <div class="article">
-            <div class="img">
-              <img src="../assets/img/temple.jpeg" />
-            </div>
-            <p>Greek Temple</p>
+            <a href="/post"
+              ><p>{{ post.title }}</p>
+            </a>
             <div class="article-bot">
               <img src="../assets/img/hearts.png" />
               <img class="mid-img" src="../assets/img/comment.png" />
@@ -73,6 +45,29 @@ export default {
     Menu,
     Footer,
     Header
+  },
+  data() {
+    return {
+      posts: "caca",
+      load: false
+    };
+  },
+  methods: {
+    getpost() {
+      var requestOptions = {
+        method: "GET",
+        redirect: "follow"
+      };
+
+      fetch("http://127.0.0.1:8000/api/post", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log((this.posts = JSON.parse(result))))
+        .catch(error => console.log("error", error))
+        .finally((this.load = true));
+    },
+    img(index) {
+      return require("../assets/img/" + index);
+    }
   }
 };
 </script>
