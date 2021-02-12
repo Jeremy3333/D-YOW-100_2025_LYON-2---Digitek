@@ -22,7 +22,10 @@
       </div>
       <div class="pp">
         <a href="/login">
-          <img src="../assets/img/pdp.png" alt="photo de profile non connecter" />
+          <img
+            src="../assets/img/pdp.png"
+            alt="photo de profile non connecter"
+          />
         </a>
       </div>
     </div>

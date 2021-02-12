@@ -3,7 +3,7 @@ import Index from "../views/Index.vue";
 import Create from "../views/create.vue";
 import Post from "../views/post.vue";
 import Profil from "../views/Profil.vue";
-import Login from "../views/login.vue"
+import Login from "../views/login.vue";
 
 const routes = [
   {
@@ -39,4 +39,3 @@ const router = createRouter({
 });
 
 export default router;
-

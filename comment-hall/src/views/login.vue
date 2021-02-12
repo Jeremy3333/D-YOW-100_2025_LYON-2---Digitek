@@ -1,56 +1,86 @@
 <template>
-    <div>
-        <Header />
-        <div class="body">
-            <div class="core">
-                <div class="log">
-                    <h1>CONNECTION PAGE</h1>
-                </div>
-                <div class="boxall">
-                    <div class="box">
-                      <div class="décal">
-                        <input class="texte" placeholder="Email" type="text" name="name" required>
-                        <p class="texte">or</p>
-                        <input class="texte" placeholder="Username" type="text" name="name" required>
-                        <div class="texte"></div>
-                        <input class="texte" placeholder="Password" type="text" name="name" required>
-                      </div>
-                      <button>
-                          SIGN IN
-                      </button>
-                    </div>
-                    <div class="box1">
-                      <div class="décal">
-                        <input type="text" placeholder="Username" class="text" name="name" required>
-                        <input type="text" placeholder="Email" class="text" name="name" required>
-                        <input type="text" placeholder="Password" class="text" name="name" required>
-                        <input type="text" placeholder="Password confirmation" class="text" name="name" required>
-                        <input type="text" placeholder="City" class="text" name="name" required>
-                        <input type="text" placeholder="Age" class="text" name="name" required>
-                      </div>
-                      <button>
-                          SIGN UP
-                      </button>
-                    </div>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="but">
-                    <img src="../assets/img/home.png" />
-                </div>
-                <div class="but">
-                    <img src="../assets/img/comment2.png" />
-                </div>
-                <div class="but">
-                    <img src="../assets/img/settings.png" />
-                </div>
-            </div>
+  <div>
+    <Header />
+    <div class="body">
+      <div class="core">
+        <div class="log">
+          <h1>CONNECTION PAGE</h1>
         </div>
+        <div class="boxall">
+          <div class="box">
+            <div class="décal">
+              <input
+                class="texte"
+                placeholder="Email"
+                type="text"
+                name="name"
+              />
+              <p class="texte">or</p>
+              <input
+                class="texte"
+                placeholder="Username"
+                type="text"
+                name="name"
+              />
+              <div class="texte"></div>
+              <input
+                class="texte"
+                placeholder="Password"
+                type="text"
+                name="name"
+              />
+            </div>
+            <button>
+              SIGN IN
+            </button>
+          </div>
+          <div class="box1">
+            <div class="décal">
+              <input
+                type="text"
+                placeholder="Username"
+                class="text"
+                name="name"
+              />
+              <input type="text" placeholder="Email" class="text" name="name" />
+              <input
+                type="text"
+                placeholder="Password"
+                class="text"
+                name="name"
+              />
+              <input
+                type="text"
+                placeholder="Password confirmation"
+                class="text"
+                name="name"
+              />
+              <input type="text" placeholder="City" class="text" name="name" />
+              <input type="text" placeholder="Age" class="text" name="name" />
+            </div>
+            <button>
+              SIGN UP
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="but">
+          <img src="../assets/img/home.png" />
+        </div>
+        <div class="but">
+          <img src="../assets/img/comment2.png" />
+        </div>
+        <div class="but">
+          <img src="../assets/img/settings.png" />
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-import Header from  "../components/heads"
+import Header from "../components/heads";
 
 export default {
   components: {
@@ -68,24 +98,24 @@ export default {
   display: flex;
 }
 .core {
-    height: 874px;
-    width: 1300px;
+  height: 874px;
+  width: 1300px;
 }
 .boxall {
-    display: flex;
-    padding: 6%;
-    justify-content: space-between;
+  display: flex;
+  padding: 6%;
+  justify-content: space-between;
 }
 .log {
-    margin-left: 34%;
-    margin-top: 3%;
+  margin-left: 34%;
+  margin-top: 3%;
 }
 .box {
-    background-color: #cecece;
-    border-radius: 25px;
-    padding: 1px;
-    height: 600px;
-    width: 440px;
+  background-color: #cecece;
+  border-radius: 25px;
+  padding: 1px;
+  height: 600px;
+  width: 440px;
 }
 .box button {
   border: 3px solid rgba(0, 0, 0, 0);
@@ -116,15 +146,15 @@ export default {
   transform: translate(-5%, 27%);
 }
 .box1 {
-    background-color: #cecece;
-    border-radius: 25px;
-    padding: 1px;
-    height: 600px;
-    width: 440px;
+  background-color: #cecece;
+  border-radius: 25px;
+  padding: 1px;
+  height: 600px;
+  width: 440px;
 }
 .décal {
   transform: translate(-54%, -50%);
-  margin-left: 50%;  
+  margin-left: 50%;
   margin-top: 55%;
   width: 85%;
 }

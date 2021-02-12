@@ -13,7 +13,7 @@
             </div>
             <div class="like-share">
               <div class="like">124 likes</div>
-              <div class="share">40 shared</div>
+              <div class="share">40 shares</div>
             </div>
           </div>
           <div class="img">
