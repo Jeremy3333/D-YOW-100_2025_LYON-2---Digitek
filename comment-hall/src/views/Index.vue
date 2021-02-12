@@ -78,10 +78,6 @@ export default {
 </script>
 
 <style scoped>
-a {
-  color: black;
-  text-decoration: none;
-}
 .body {
   margin-left: 15%;
   width: 70%;

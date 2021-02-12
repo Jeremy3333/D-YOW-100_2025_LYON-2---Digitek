@@ -5,8 +5,76 @@
       <Menu />
       <div class="main">
         <h1>Profil</h1>
-        <img src="../assets/img/unnamed.jpg" />
+        <img class="pdp" src="../assets/img/unnamed.jpg" />
         <div class="change">change picture</div>
+        <div class="info">
+          <p>
+            Likes:
+            <br />
+            230
+          </p>
+          <p>
+            Shares:
+            <br />
+            50
+          </p>
+          <p>
+            Comments:
+            <br />
+            100
+          </p>
+          <p>
+            Posts:
+            <br />
+            10
+          </p>
+        </div>
+        <div class="grid">
+          <div class="article">
+            <div class="img">
+              <img src="../assets/img/temple.jpeg" />
+            </div>
+            <a href="/post"><p>Greek Temple</p></a>
+            <div class="article-bot">
+              <img src="../assets/img/hearts.png" />
+              <img class="mid-img" src="../assets/img/comment.png" />
+              <img src="../assets/img/share.png" />
+            </div>
+          </div>
+          <div class="article">
+            <div class="img">
+              <img src="../assets/img/temple.jpeg" />
+            </div>
+            <p>Greek Temple</p>
+            <div class="article-bot">
+              <img src="../assets/img/hearts.png" />
+              <img class="mid-img" src="../assets/img/comment.png" />
+              <img src="../assets/img/share.png" />
+            </div>
+          </div>
+          <div class="article">
+            <div class="img">
+              <img src="../assets/img/temple.jpeg" />
+            </div>
+            <p>Greek Temple</p>
+            <div class="article-bot">
+              <img src="../assets/img/hearts.png" />
+              <img class="mid-img" src="../assets/img/comment.png" />
+              <img src="../assets/img/share.png" />
+            </div>
+          </div>
+          <div class="article">
+            <div class="img">
+              <img src="../assets/img/temple.jpeg" />
+            </div>
+            <p>Greek Temple</p>
+            <div class="article-bot">
+              <img src="../assets/img/hearts.png" />
+              <img class="mid-img" src="../assets/img/comment.png" />
+              <img src="../assets/img/share.png" />
+            </div>
+          </div>
+        </div>
         <Footer />
       </div>
     </div>
@@ -40,9 +108,82 @@ export default {
   width: 80%;
   height: 100%;
 }
-.main img {
+.main h1 {
+  margin: 15px;
+}
+.pdp {
   width: 30%;
   border-radius: 20px;
-  border: 2px solid black;
+  border: 2px solid #715696;
+}
+.change {
+  background-color: #715696;
+  width: 29%;
+  margin-left: 50%;
+  transform: translate(-50%);
+  height: 40px;
+  margin-top: 20px;
+  padding-top: 17px;
+  border-radius: 10px;
+  color: white;
+}
+.info {
+  background-color: #d8edf3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #715696;
+  width: 90%;
+  margin-left: 50%;
+  transform: translate(-50%);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+.article {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 30px;
+  background-color: #ededed;
+  border-radius: 5px;
+  padding: 1px;
+  text-align: center;
+  border: 1px solid #a6a6a6;
+}
+.article p {
+  margin: 10px;
+}
+.img {
+  position: relative;
+  width: 80%;
+  border-radius: 5px;
+  margin-left: 10%;
+  margin-top: 10%;
+  height: 115px;
+  overflow: hidden;
+  text-align: center;
+}
+.img img {
+  width: 100%;
+}
+.article-bot {
+  border-top: 3px solid #a6a6a6;
+  margin-top: 10px;
+}
+.article-bot img {
+  width: 20px;
+  padding: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.mid-img {
+  border-left: 2px solid #a6a6a6;
+  border-right: 2px solid #a6a6a6;
 }
 </style>
