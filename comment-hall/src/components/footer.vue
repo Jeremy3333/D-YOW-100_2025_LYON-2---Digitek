@@ -29,6 +29,7 @@ export default {
   bottom: 0;
   display: flex;
   justify-content: left;
+  text-align: left;
 }
 .footer img {
   height: 80%;
