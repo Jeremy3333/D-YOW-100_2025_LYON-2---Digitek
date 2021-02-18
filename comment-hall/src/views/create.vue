@@ -9,7 +9,7 @@
             <img src="../assets/img/temple.jpeg" />
           </div>
           <img class="plus" src="../assets/img/plusb.webp" />
-          <form  method="post" enctype="multipart/form-data">
+          <form method="post" enctype="multipart/form-data">
             <input type="file" />
             <input type="text" placeholder="Title" />
             <input type="text" placeholder="Link" />
