@@ -4,6 +4,7 @@ import Create from "../views/create.vue";
 import Post from "../views/post.vue";
 import Profil from "../views/Profil.vue";
 import Login from "../views/login.vue";
+import Settings from "../views/settings.vue";
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     path: "/post",
     name: "Post",
     component: Post
+  },
+  {
+    path: "/settings",
+    name: "Settings",
+    component: Settings
   },
   {
     path: "/profil",

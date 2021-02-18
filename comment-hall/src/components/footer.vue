@@ -6,7 +6,7 @@
     <div class="but" @click="profil">
       <img src="../assets/img/comment2.png" />
     </div>
-    <div class="but">
+    <div class="but" @click="setings">
       <img src="../assets/img/settings.png" />
     </div>
   </div>
