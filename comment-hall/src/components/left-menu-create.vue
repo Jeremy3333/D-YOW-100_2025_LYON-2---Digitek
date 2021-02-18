@@ -67,7 +67,7 @@ a {
 }
 .menu {
   background-color: #f2f2f2;
-  width: 37%;
+  width: 20%;
   padding: 1px;
 }
 .create {

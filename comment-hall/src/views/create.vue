@@ -6,11 +6,12 @@
       <div class="princ">
         <div class="main">
           <div class="img">
-            <img src="../assets/img/temple.jpeg" />
+            <img src="imageSrc" />
+            {{ imageSrc }}
           </div>
           <img class="plus" src="../assets/img/plusb.webp" />
-          <form  method="post" enctype="multipart/form-data">
-            <input type="file" />
+          <form method="post" enctype="multipart/form-data">
+            <input @change="updateProfile" type="file" name="photo" accept="image/*" />
             <input type="text" placeholder="Title" />
             <input type="text" placeholder="Link" />
             <input type="text" placeholder="Description" />
@@ -35,6 +36,22 @@ export default {
     Header,
     Menu,
     Footer
+  },
+  data() {
+    return {
+      imageSrc: ""
+    };
+  },
+  methods: {
+    updateProfile(e) {
+      let file = e.target.files[0];
+      let reader = new FileReader();
+      reader.onloadend = e => {
+        this.imageSrc = reader.result;
+        console.log(e);
+      };
+      reader.readAsDataURL(file);
+    }
   }
 };
 </script>
@@ -50,9 +67,8 @@ export default {
 .main {
   background-color: #e2e2e2;
   border: 2px solid black;
-  width: 50%;
-  margin-left: 50%;
-  transform: translate(-50%);
+  width: 70%;
+  margin-left: 25%;
   margin-top: 100px;
   height: fit-content;
   display: flex;
