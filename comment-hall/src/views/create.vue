@@ -9,8 +9,12 @@
             <img src="../assets/img/temple.jpeg" />
           </div>
           <img class="plus" src="../assets/img/plusb.webp" />
-          <input type="text" placeholder="Link" />
-          <input type="text" placeholder="Description" />
+          <form  method="post" enctype="multipart/form-data">
+            <input type="file" />
+            <input type="text" placeholder="Title" />
+            <input type="text" placeholder="Link" />
+            <input type="text" placeholder="Description" />
+          </form>
         </div>
         <div class="submit">
           <p>Submit</p>
@@ -70,10 +74,9 @@ input {
 .img {
   position: relative;
   width: 80%;
-  border-radius: 5px;
   margin-left: 10%;
   margin-top: 10%;
-  height: 290px;
+  height: 230px;
   overflow: hidden;
   text-align: center;
 }

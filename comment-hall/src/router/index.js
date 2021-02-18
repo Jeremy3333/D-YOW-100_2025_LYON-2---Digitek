@@ -23,7 +23,7 @@ const routes = [
     component: Create
   },
   {
-    path: "/post",
+    path: "/post/:id",
     name: "Post",
     component: Post
   },

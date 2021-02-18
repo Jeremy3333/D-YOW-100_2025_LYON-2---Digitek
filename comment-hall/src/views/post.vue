@@ -3,28 +3,26 @@
     <Header />
     <div class="body">
       <Menu />
+      <div v-if="!load">
+        {{ get() }}
+      </div>
       <div class="main">
         <div class="article">
-          <h2>Greek Temple</h2>
+          <h2>{{ post.title }}</h2>
           <div class="info">
             <div class="auth">
-              <p>Jade23</p>
-              <a href="#">www.j'aimel'argent.com</a>
+              <p>{{ post.user }}</p>
+              <a href="#">{{ post.link }}</a>
             </div>
             <div class="like-share">
-              <div class="like">124 likes</div>
-              <div class="share">40 shares</div>
+              <div class="like">{{ post.likes }} likes</div>
+              <div class="share">{{ post.shares }} shares</div>
             </div>
           </div>
           <div class="img">
-            <img src="../assets/img/temple.jpeg" />
+            <img :src="img(post.img)" />
           </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi,
-            cupiditate ratione debitis est obcaecati iure accusantium recusandae
-            illo similique velit expedita ullam quaerat modi repellendus culpa
-            provident odio nulla. Earum!
-          </p>
+          <p>{{ post.comment }}</p>
         </div>
         <Footer />
       </div>
@@ -42,6 +40,32 @@ export default {
     Header,
     Menu,
     Footer
+  },
+  data() {
+    return {
+      post: "",
+      load: false
+    };
+  },
+  methods: {
+    get() {
+      var requestOptions = {
+        method: "GET",
+        redirect: "follow"
+      };
+
+      fetch(
+        "http://127.0.0.1:8000/api/post/" + this.$route.params.id,
+        requestOptions
+      )
+        .then(response => response.text())
+        .then(result => console.log((this.post = JSON.parse(result))))
+        .catch(error => console.log("error", error))
+        .finally((this.load = true));
+    },
+    img(index) {
+      return require("../assets/img/" + index);
+    }
   }
 };
 </script>
