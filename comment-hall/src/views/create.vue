@@ -9,10 +9,12 @@
             <img src="../assets/img/temple.jpeg" />
           </div>
           <img class="plus" src="../assets/img/plusb.webp" />
-          <input type="file">
-          <input type="text" placeholder="Title" />
-          <input type="text" placeholder="Link" />
-          <input type="text" placeholder="Description" />
+          <form  method="post" enctype="multipart/form-data">
+            <input type="file" />
+            <input type="text" placeholder="Title" />
+            <input type="text" placeholder="Link" />
+            <input type="text" placeholder="Description" />
+          </form>
         </div>
         <div class="submit">
           <p>Submit</p>
