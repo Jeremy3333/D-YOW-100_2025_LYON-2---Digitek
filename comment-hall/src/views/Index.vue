@@ -15,13 +15,16 @@
           </div>
         </div>
         <div class="grid">
-          <div class="article" v-for="(post, index) in posts" :key="index">
+          <div
+            class="article"
+            v-for="(post, index) in posts"
+            :key="index"
+            @click="show(post.id)"
+          >
             <div class="img">
               <img :src="img(post.img)" />
             </div>
-            <a href="/post"
-              ><p>{{ post.title }}</p>
-            </a>
+            <p>{{ post.title }}</p>
             <div class="article-bot">
               <img src="../assets/img/hearts.png" />
               <img class="mid-img" src="../assets/img/comment.png" />
@@ -48,7 +51,7 @@ export default {
   },
   data() {
     return {
-      posts: "caca",
+      posts: "",
       load: false
     };
   },
@@ -67,6 +70,9 @@ export default {
     },
     img(index) {
       return require("../assets/img/" + index);
+    },
+    show(index) {
+      window.location.href = `/post/${index}`;
     }
   }
 };

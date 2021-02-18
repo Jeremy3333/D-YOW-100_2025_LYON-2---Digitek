@@ -114,7 +114,7 @@ a {
 .article-bot img {
   width: 20px;
   padding: 7px;
-  padding-left: 15px;
+  padding-left: 10px;
   padding-right: 15px;
 }
 .mid-img {
@@ -126,10 +126,10 @@ a {
 }
 .preview {
   background-color: #8bc8db;
-  width: 80%;
-  margin-left: 10%;
+  width: 90%;
+  margin-left: 5%;
   margin-bottom: 20px;
-  padding-top: 10px;
+  padding-top: 5px;
   padding-bottom: 10px;
   border-radius: 10px;
 }
