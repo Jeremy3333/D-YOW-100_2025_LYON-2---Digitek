@@ -22,7 +22,7 @@
             @click="show(post.id)"
           >
             <div class="img">
-              <img :src="img(post.img)" />
+              <img :src="post.img" />
             </div>
             <p>{{ post.title }}</p>
             <div class="article-bot">

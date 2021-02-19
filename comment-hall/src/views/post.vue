@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="img">
-            <img :src="img(post.img)" />
+            <img :src="post.img" />
           </div>
           <p>{{ post.comment }}</p>
         </div>
