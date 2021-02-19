@@ -6,18 +6,22 @@
       <div class="princ">
         <div class="main">
           <div class="img">
-            <img src="imageSrc" />
-            {{ imageSrc }}
+            <img :src="imageSrc" />
           </div>
           <img class="plus" src="../assets/img/plusb.webp" />
           <form method="post" enctype="multipart/form-data">
-            <input @change="updateProfile" type="file" name="photo" accept="image/*" />
-            <input type="text" placeholder="Title" />
-            <input type="text" placeholder="Link" />
-            <input type="text" placeholder="Description" />
+            <input
+              @change="updateProfile"
+              type="file"
+              name="photo"
+              accept="image/*"
+            />
+            <input type="text" v-model="title" placeholder="Title" />
+            <input type="text" v-model="link" placeholder="Link" />
+            <input type="text" v-model="comment" placeholder="Description" />
           </form>
         </div>
-        <div class="submit">
+        <div class="submit" @click="post">
           <p>Submit</p>
         </div>
         <Footer />
@@ -39,7 +43,11 @@ export default {
   },
   data() {
     return {
-      imageSrc: ""
+      imageSrc: "",
+      image: "",
+      title: "",
+      link: "",
+      comment: ""
     };
   },
   methods: {
@@ -49,8 +57,48 @@ export default {
       reader.onloadend = e => {
         this.imageSrc = reader.result;
         console.log(e);
+        this.string();
       };
       reader.readAsDataURL(file);
+    },
+    string() {
+      var n = this.imageSrc.indexOf(",");
+      this.image = this.imageSrc.substring(n + 1);
+      console.log(this.image);
+    },
+    post() {
+      if (
+        this.image != "" &&
+        this.title != "" &&
+        this.link != "" &&
+        this.comment != ""
+      ) {
+        var formdata = new FormData();
+        formdata.append("title", this.title);
+        formdata.append("user", "Jordan");
+        formdata.append("link", this.link);
+        formdata.append("likes", 0);
+        formdata.append("shares", 0);
+        formdata.append("comment", this.comment);
+        formdata.append("img", this.image);
+
+        var requestOptions = {
+          method: "POST",
+          body: formdata,
+          redirect: "follow"
+        };
+
+        fetch("http://localhost:8000/api/post", requestOptions)
+          .then(response => response.text())
+          .then(result => console.log(result))
+          .catch(error => console.log("error", error))
+          .finally(this.redirect());
+      } else {
+        console.log("il manque");
+      }
+    },
+    redirect() {
+      window.location.href = "/";
     }
   }
 };
@@ -113,6 +161,7 @@ input {
   height: 50px;
   text-align: center;
   margin-top: 5%;
+  margin-bottom: 20%;
   border-radius: 10px;
 }
 .submit p {
