@@ -1,26 +1,49 @@
 <template>
   <div class="footer">
-    <div class="but">
-      <img src="../assets/img/home.png" />
+    <div v-if="!charged">
+      {{ footer() }}
     </div>
-    <div class="but" @click="profil">
+    <div :class="pasvar">
+      <img :src="img('home.png')" />
+    </div>
+    <div :class="cestvar" @click="profil">
       <img src="../assets/img/comment2.png" />
     </div>
-    <div class="but" @click="setings">
+    <div :class="bonvar" @click="setings">
       <img src="../assets/img/settings.png" />
     </div>
   </div>
 </template>
 <script>
 export default {
+  data() {
+    return {
+      pasvar: "but",
+      cestvar: "but",
+      bonvar: "but",
+      charged: false,
+      imgLink: "../assets/img/home.png"
+    };
+  },
   methods: {
     profil: function() {
       window.location.href = "/profil";
+    },
+    img(index) {
+      if (this.$route.path == "/") {
+        return require("../assets/img/homeb.png");
+      } else return require("../assets/img/" + index);
+    },
+    footer: function() {
+      this.charged = true;
+      if (this.$route.path == "/") {
+        this.pasvar = "but1";
+      }
     }
   }
 };
 </script>
-<style scoped>
+<style>
 .footer {
   height: 50px;
   width: 56%;
@@ -38,6 +61,12 @@ export default {
   transform: translate(-50%);
 }
 .but {
+  width: 32.8%;
+  border-left: 3px solid #a6a6a6;
+  border-right: 3px solid #a6a6a6;
+}
+.but1 {
+  background: #adedfd;
   width: 32.8%;
   border-left: 3px solid #a6a6a6;
   border-right: 3px solid #a6a6a6;

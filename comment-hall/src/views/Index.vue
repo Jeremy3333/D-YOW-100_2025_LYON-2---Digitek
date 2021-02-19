@@ -3,9 +3,9 @@
     <Header />
     <div class="body">
       <Menu />
-      <div v-if="!load">
+      <!-- <div v-if="!load">
         {{ getpost() }}
-      </div>
+      </div> -->
       <div class="main">
         <div class="main-top">
           <div class="main-title">Recommended Post</div>
