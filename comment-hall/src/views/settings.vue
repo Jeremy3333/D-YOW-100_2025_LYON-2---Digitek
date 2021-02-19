@@ -146,7 +146,7 @@ export default {
 }
 .boxall {
   display: flex;
-  margin-top: 2%;
+  margin-top: 1%;
   margin-left: 9%;
   justify-content: space-between;
 }
@@ -187,8 +187,8 @@ export default {
   margin-top: 1.5%;
 }
 .décal {
-  margin-left: 8%;
-  width: 85%;
+  margin-left: 11%;
+  width: 80%;
 }
 .title {
   margin-top: 8%;
