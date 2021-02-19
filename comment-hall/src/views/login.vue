@@ -65,13 +65,13 @@
         </div>
       </div>
       <div class="footer">
-        <div class="but">
+        <div :class="pasvar" @click="Index">
           <img src="../assets/img/home.png" />
         </div>
-        <div class="but">
+        <div :class="cestvar" @click="profil">
           <img src="../assets/img/comment2.png" />
         </div>
-        <div class="but">
+        <div :class="bonvar" @click="Settings">
           <img src="../assets/img/settings.png" />
         </div>
       </div>
@@ -85,6 +85,24 @@ import Header from "../components/heads";
 export default {
   components: {
     Header
+  },
+  data() {
+    return {
+      pasvar: "but",
+      cestvar: "but",
+      bonvar: "but"
+    };
+  },
+  methods: {
+    Index: function() {
+      window.location.href = "/";
+    },
+    profil: function() {
+      window.location.href = "/profil";
+    },
+    Settings: function() {
+      window.location.href = "/settings";
+    }
   }
 };
 </script>
@@ -178,7 +196,7 @@ export default {
 .footer {
   height: 50px;
   width: 70%;
-  background-color: #ededed00;
+  background-color: #ededed;
   position: fixed;
   bottom: 0;
   display: flex;

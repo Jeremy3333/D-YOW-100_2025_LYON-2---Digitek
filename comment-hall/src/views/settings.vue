@@ -108,11 +108,8 @@
         </div>
       </div>
       <div class="footer">
-        <div v-if="!charged">
-          {{ footer() }}
-        </div>
         <div :class="pasvar" @click="Index">
-          <img :src="img('home.png')" />
+          <img src="../assets/img/home.png" />
         </div>
         <div :class="cestvar" @click="profil">
           <img src="../assets/img/comment2.png" />
@@ -136,9 +133,7 @@ export default {
     return {
       pasvar: "but",
       cestvar: "but",
-      bonvar: "but",
-      charged: false,
-      imgLink: "../assets/img/home.png"
+      bonvar: "but"
     };
   },
   methods: {
@@ -150,17 +145,6 @@ export default {
     },
     Settings: function() {
       window.location.href = "/settings";
-    },
-    img(index) {
-      if (this.$route.path == "/") {
-        return require("../assets/img/homeb.png");
-      } else return require("../assets/img/" + index);
-    },
-    footer: function() {
-      this.charged = true;
-      if (this.$route.path == "/") {
-        this.pasvar = "but1";
-      }
     }
   }
 };
