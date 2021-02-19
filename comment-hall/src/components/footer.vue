@@ -3,13 +3,13 @@
     <div v-if="!charged">
       {{ footer() }}
     </div>
-    <div :class="pasvar">
+    <div :class="pasvar" @click="Index">
       <img :src="img('home.png')" />
     </div>
     <div :class="cestvar" @click="profil">
       <img src="../assets/img/comment2.png" />
     </div>
-    <div :class="bonvar" @click="setings">
+    <div :class="bonvar" @click="Settings">
       <img src="../assets/img/settings.png" />
     </div>
   </div>
@@ -26,8 +26,14 @@ export default {
     };
   },
   methods: {
+    Index: function() {
+      window.location.href = "/";
+    },
     profil: function() {
       window.location.href = "/profil";
+    },
+    Settings: function() {
+      window.location.href = "/settings";
     },
     img(index) {
       if (this.$route.path == "/") {
