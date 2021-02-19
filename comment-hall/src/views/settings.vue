@@ -108,14 +108,17 @@
         </div>
       </div>
       <div class="footer">
-        <div class="but">
-          <img src="../assets/img/home.png" />
+        <div v-if="!charged">
+          {{ footer() }}
         </div>
-        <div class="but">
+        <div :class="pasvar" @click="Index">
+          <img :src="img('home.png')" />
+        </div>
+        <div :class="cestvar" @click="profil">
           <img src="../assets/img/comment2.png" />
         </div>
-        <div class="but1">
-          <img src="../assets/img/settings-b.png" />
+        <div :class="bonvar" @click="Settings">
+          <img src="../assets/img/settings.png" />
         </div>
       </div>
     </div>
@@ -128,6 +131,37 @@ import Header from "../components/heads";
 export default {
   components: {
     Header
+  },
+  data() {
+    return {
+      pasvar: "but",
+      cestvar: "but",
+      bonvar: "but",
+      charged: false,
+      imgLink: "../assets/img/home.png"
+    };
+  },
+  methods: {
+    Index: function() {
+      window.location.href = "/";
+    },
+    profil: function() {
+      window.location.href = "/profil";
+    },
+    Settings: function() {
+      window.location.href = "/settings";
+    },
+    img(index) {
+      if (this.$route.path == "/") {
+        return require("../assets/img/homeb.png");
+      } else return require("../assets/img/" + index);
+    },
+    footer: function() {
+      this.charged = true;
+      if (this.$route.path == "/") {
+        this.pasvar = "but1";
+      }
+    }
   }
 };
 </script>
