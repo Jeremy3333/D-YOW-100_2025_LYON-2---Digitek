@@ -13,21 +13,13 @@
                 class="texte"
                 placeholder="Email"
                 type="text"
-                name="name"
+                v-model="email"
               />
-              <p class="texte">or</p>
-              <input
-                class="texte"
-                placeholder="Username"
-                type="text"
-                name="name"
-              />
-              <div class="texte"></div>
               <input
                 class="texte"
                 placeholder="Password"
                 type="text"
-                name="name"
+                v-model="password"
               />
             </div>
             <button>
@@ -40,25 +32,31 @@
                 type="text"
                 placeholder="Username"
                 class="text"
-                name="name"
+                v-model="usernamereg"
               />
-              <input type="text" placeholder="Email" class="text" name="name" />
               <input
                 type="text"
+                placeholder="Email"
+                class="text"
+                name="name"
+                v-model="emailreg"
+              />
+              <input
+                type="password"
                 placeholder="Password"
                 class="text"
                 name="name"
+                v-model="passwordreg"
               />
               <input
-                type="text"
+                type="password"
                 placeholder="Password confirmation"
                 class="text"
                 name="name"
+                v-model="passwordconf"
               />
-              <input type="text" placeholder="City" class="text" name="name" />
-              <input type="text" placeholder="Age" class="text" name="name" />
             </div>
-            <button>
+            <button @click="PasswordCheck()">
               SIGN UP
             </button>
           </div>
@@ -81,6 +79,7 @@
 
 <script>
 import Header from "../components/heads";
+var CryptoJS = require("crypto-js");
 
 export default {
   components: {
@@ -90,7 +89,15 @@ export default {
     return {
       pasvar: "but",
       cestvar: "but",
-      bonvar: "but"
+      bonvar: "but",
+      username: "",
+      usernamereg: "",
+      password: "",
+      passwordconf: "",
+      passwordreg: "",
+      email: "",
+      emailreg: "",
+      crypt: ""
     };
   },
   methods: {
@@ -102,6 +109,25 @@ export default {
     },
     Settings: function() {
       window.location.href = "/settings";
+    },
+    PasswordCheck() {
+      if (
+        this.emailreg != "" &&
+        this.passwordreg != "" &&
+        this.passwordconf != "" &&
+        this.usernamereg != ""
+      ) {
+        if (this.passwordreg == this.passwordconf) {
+          this.register();
+        } else {
+          console.log("autre");
+        }
+      } else {
+        console.log("manque");
+      }
+    },
+    register() {
+      console.log(CryptoJS.MD5(this.passwordreg).toString());
     }
   }
 };
@@ -143,7 +169,7 @@ export default {
   height: 50px;
   width: 250px;
   margin-left: 50%;
-  transform: translate(-50%, -300%);
+  transform: translate(-50%, -100%);
 }
 .box1 button {
   border: 3px solid rgba(0, 0, 0, 0);
@@ -153,7 +179,7 @@ export default {
   height: 50px;
   width: 250px;
   margin-left: 50%;
-  transform: translate(-50%, -300%);
+  transform: translate(-50%, -100%);
 }
 .box input {
   border: 3px solid black;
