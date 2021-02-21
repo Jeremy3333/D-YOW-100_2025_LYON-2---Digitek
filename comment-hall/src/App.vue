@@ -4,4 +4,15 @@
   </div>
 </template>
 
-<style></style>
+<script></script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+</style>

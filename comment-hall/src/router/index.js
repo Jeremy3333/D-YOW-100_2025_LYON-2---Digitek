@@ -1,11 +1,47 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Index from "../components/Index.vue";
+import Index from "../views/Index.vue";
+import Create from "../views/create.vue";
+import Post from "../views/post.vue";
+import Profil from "../views/Profil.vue";
+import Login from "../views/login.vue";
+import Settings from "../views/settings.vue";
+import Test from "../views/test.vue";
 
 const routes = [
   {
     path: "/",
     name: "Index",
     component: Index
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login
+  },
+  {
+    path: "/create",
+    name: "Create",
+    component: Create
+  },
+  {
+    path: "/post/:id",
+    name: "Post",
+    component: Post
+  },
+  {
+    path: "/settings",
+    name: "Settings",
+    component: Settings
+  },
+  {
+    path: "/profil",
+    name: "Profil",
+    component: Profil
+  },
+  {
+    path: "/test",
+    name: "test",
+    component: Test
   }
 ];
 
