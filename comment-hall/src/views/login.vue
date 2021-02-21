@@ -22,7 +22,7 @@
                 v-model="password"
               />
             </div>
-            <button>
+            <button @click="GetAllUsers()">
               SIGN IN
             </button>
           </div>
@@ -62,7 +62,7 @@
                 v-model="passwordconf"
               />
             </div>
-            <button @click="PasswordCheck()">
+            <button @click="PasswordCheckreg()">
               SIGN UP
             </button>
           </div>
@@ -105,7 +105,8 @@ export default {
       emailreg: "",
       crypt: "",
       imageSrc: "",
-      re: /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      re: /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      users: ""
     };
   },
   methods: {
@@ -118,7 +119,7 @@ export default {
     Settings: function() {
       window.location.href = "/settings";
     },
-    PasswordCheck() {
+    PasswordCheckreg() {
       if (
         this.emailreg != "" &&
         this.passwordreg != "" &&
@@ -169,7 +170,29 @@ export default {
       fetch("http://localhost:8000/api/users", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
-        .catch(error => console.log("error", error));
+        .catch(error => console.log("error", error))
+        .finally(this.Cookiereg());
+    },
+    Cookiereg() {
+      document.cookie = `email=${this.emailreg}; SameSite=None; Secure`;
+      document.cookie = `password=${this.passwordreg}; SameSite=None; Secure`;
+    },
+    async GetAllUsers() {
+      var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+
+      await fetch("http://localhost:8000/api/users", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(this.users = JSON.parse(result)))
+        .catch(error => console.log('error', error))
+
+      this.ChooseUser()
+    },
+    ChooseUser() {
+      console.log("test")
+      console.log(this.users);
     }
   }
 };
