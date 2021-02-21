@@ -18,7 +18,7 @@
               <input
                 class="texte"
                 placeholder="Password"
-                type="text"
+                type="password"
                 v-model="password"
               />
             </div>
@@ -106,7 +106,9 @@ export default {
       crypt: "",
       imageSrc: "",
       re: /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      users: ""
+      users: "",
+      user: "",
+      id: ""
     };
   },
   methods: {
@@ -175,24 +177,46 @@ export default {
     },
     Cookiereg() {
       document.cookie = `email=${this.emailreg}; SameSite=None; Secure`;
-      document.cookie = `password=${this.passwordreg}; SameSite=None; Secure`;
+      document.cookie = `password=${this.crypt}; SameSite=None; Secure`;
     },
     async GetAllUsers() {
       var requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
+        method: "GET",
+        redirect: "follow"
       };
 
       await fetch("http://localhost:8000/api/users", requestOptions)
         .then(response => response.text())
-        .then(result => console.log(this.users = JSON.parse(result)))
-        .catch(error => console.log('error', error))
+        .then(result => console.log((this.users = JSON.parse(result))))
+        .catch(error => console.log("error", error));
 
-      this.ChooseUser()
+      this.users = this.users.find(user => user.email === this.email);
+
+      if (this.users == undefined) {
+        console.log("email existe pas");
+      } else {
+        this.crypt = CryptoJS.MD5(this.password).toString();
+        this.id = this.users.id;
+        this.LoginVerifie();
+      }
     },
-    ChooseUser() {
-      console.log("test")
-      console.log(this.users);
+    async LoginVerifie() {
+      var requestOptions = {
+        method: "GET",
+        redirect: "follow"
+      };
+
+      await fetch(`http://localhost:8000/api/users/${this.id}`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log((this.user = JSON.parse(result))))
+        .catch(error => console.log("error", error));
+
+      if (this.crypt == this.user.password) {
+        document.cookie = `email=${this.email}; SameSite=None; Secure`;
+        document.cookie = `password=${this.crypt}; SameSite=None; Secure`;
+      } else {
+        console.log("code mauvais");
+      }
     }
   }
 };
