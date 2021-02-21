@@ -1,11 +1,16 @@
 <template>
   <div>
+    <div v-if="!load">
+      {{ getCookies() }}
+    </div>
     <Header />
     <div class="body">
       <Menu />
       <div class="main">
         <h1>Profil</h1>
-        <img class="pdp" src="../assets/img/unnamed.jpg" />
+        <div class="pdp">
+          <img :src="user.pdp" />
+        </div>
         <div class="change">change picture</div>
         <div class="info">
           <p>
@@ -91,6 +96,83 @@ export default {
     Header,
     Menu,
     Footer
+  },
+  data() {
+    return {
+      load: false,
+      password: "",
+      email: "",
+      pdp: false,
+      user: ""
+    };
+  },
+  methods: {
+    getCookies() {
+      var email = "email=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(";");
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == " ") {
+          c = c.substring(1);
+        }
+        if (c.indexOf(email) == 0) {
+          this.load = true;
+          this.email = c.substring(email.length, c.length);
+        }
+      }
+      var password = "password=";
+      var decodedCookies = decodeURIComponent(document.cookie);
+      var cas = decodedCookies.split(";");
+      for (var y = 0; y < cas.length; y++) {
+        var f = cas[y];
+        while (f.charAt(0) == " ") {
+          f = f.substring(1);
+        }
+        if (f.indexOf(password) == 0) {
+          this.load = true;
+          this.password = f.substring(password.length, f.length);
+        }
+      }
+      this.GetAllUsers();
+    },
+    async GetAllUsers() {
+      var requestOptions = {
+        method: "GET",
+        redirect: "follow"
+      };
+
+      await fetch("http://localhost:8000/api/users", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log((this.users = JSON.parse(result))))
+        .catch(error => console.log("error", error));
+
+      this.users = this.users.find(user => user.email === this.email);
+
+      if (this.users == undefined) {
+        console.log("email existe pas");
+      } else {
+        this.id = this.users.id;
+        this.LoginVerifie();
+      }
+    },
+    async LoginVerifie() {
+      var requestOptions = {
+        method: "GET",
+        redirect: "follow"
+      };
+
+      await fetch(`http://localhost:8000/api/users/${this.id}`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log((this.user = JSON.parse(result))))
+        .catch(error => console.log("error", error));
+
+      if (this.password == this.user.password) {
+        this.pdp = true;
+      } else {
+        console.log("code mauvais");
+      }
+    }
   }
 };
 </script>
@@ -112,9 +194,18 @@ export default {
   margin: 15px;
 }
 .pdp {
-  width: 30%;
+  width: 300px;
+  height: 300px;
   border-radius: 20px;
   border: 2px solid #715696;
+  border-radius: 5px;
+  margin-top: 10%;
+  overflow: hidden;
+  text-align: center;
+  margin-left: 32.2%;
+}
+.pdp img {
+  width: 100%;
 }
 .change {
   background-color: #715696;
@@ -145,6 +236,7 @@ export default {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
+  margin-bottom: 55px;
 }
 .article {
   width: 80%;

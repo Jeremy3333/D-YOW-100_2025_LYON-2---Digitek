@@ -6,7 +6,7 @@
     <div :class="pasvar" @click="Index">
       <img :src="img('home.png')" />
     </div>
-    <div :class="cestvar" @click="profil">
+    <div :class="cestvar">
       <img src="../assets/img/comment2.png" />
     </div>
     <div :class="bonvar" @click="Settings">
@@ -28,9 +28,6 @@ export default {
   methods: {
     Index: function() {
       window.location.href = "/";
-    },
-    profil: function() {
-      window.location.href = "/profil";
     },
     Settings: function() {
       window.location.href = "/settings";

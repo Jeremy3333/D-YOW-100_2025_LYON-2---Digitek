@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="body">
       <div class="core">
         <div class="log">
@@ -84,13 +83,9 @@
 </template>
 
 <script>
-import Header from "../components/heads";
 var CryptoJS = require("crypto-js");
 
 export default {
-  components: {
-    Header
-  },
   data() {
     return {
       pasvar: "but",
@@ -178,6 +173,8 @@ export default {
     Cookiereg() {
       document.cookie = `email=${this.emailreg}; SameSite=None; Secure`;
       document.cookie = `password=${this.crypt}; SameSite=None; Secure`;
+      document.cookie = `username=${this.usernamereg}; SameSite=None; Secure`;
+      window.location.href = "/";
     },
     async GetAllUsers() {
       var requestOptions = {
@@ -210,10 +207,12 @@ export default {
         .then(response => response.text())
         .then(result => console.log((this.user = JSON.parse(result))))
         .catch(error => console.log("error", error));
-
+      console.log(this.crypt);
       if (this.crypt == this.user.password) {
         document.cookie = `email=${this.email}; SameSite=None; Secure`;
         document.cookie = `password=${this.crypt}; SameSite=None; Secure`;
+        document.cookie = `username=${this.user.username}; SameSite=None; Secure`;
+        window.location.href = "/";
       } else {
         console.log("code mauvais");
       }

@@ -1,6 +1,9 @@
 <template>
   <div>
     <Header />
+    <div v-if="!load">
+      {{ getCookies() }}
+    </div>
     <div class="body">
       <Menu />
       <div class="princ">
@@ -47,7 +50,8 @@ export default {
       image: "",
       title: "",
       link: "",
-      comment: ""
+      comment: "",
+      username: ""
     };
   },
   methods: {
@@ -60,6 +64,20 @@ export default {
         this.string();
       };
       reader.readAsDataURL(file);
+    },
+    getCookie() {
+      var name = "username=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(";");
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == " ") {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          this.username = c.substring(name.length, c.length);
+        }
+      }
     },
     string() {
       var n = this.imageSrc.indexOf(",");
@@ -75,7 +93,7 @@ export default {
       ) {
         var formdata = new FormData();
         formdata.append("title", this.title);
-        formdata.append("user", "Jordan");
+        formdata.append("user", this.username);
         formdata.append("link", this.link);
         formdata.append("likes", 0);
         formdata.append("shares", 0);

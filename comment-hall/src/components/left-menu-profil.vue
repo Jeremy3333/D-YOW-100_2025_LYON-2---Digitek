@@ -1,14 +1,13 @@
 <template>
   <div class="menu">
+    <div v-if="!load">
+      {{ getCookies() }}
+    </div>
     <h2>User<br />Information</h2>
     <h3>Username:</h3>
-    <p>Geraldine Poutine</p>
+    {{ user.username }}
     <h3>Email:</h3>
-    <p>Geraldine.P@gmail.com</p>
-    <h3>City:</h3>
-    <p>Toulouse</p>
-    <h3>Age:</h3>
-    <p>22 years old</p>
+    {{ user.email }}
     <div class="create">
       <p>Modify</p>
     </div>
@@ -18,7 +17,85 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      load: false,
+      password: "",
+      email: "",
+      pdp: false,
+      user: ""
+    };
+  },
+  methods: {
+    getCookies() {
+      var email = "email=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(";");
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == " ") {
+          c = c.substring(1);
+        }
+        if (c.indexOf(email) == 0) {
+          this.load = true;
+          this.email = c.substring(email.length, c.length);
+        }
+      }
+      var password = "password=";
+      var decodedCookies = decodeURIComponent(document.cookie);
+      var cas = decodedCookies.split(";");
+      for (var y = 0; y < cas.length; y++) {
+        var f = cas[y];
+        while (f.charAt(0) == " ") {
+          f = f.substring(1);
+        }
+        if (f.indexOf(password) == 0) {
+          this.load = true;
+          this.password = c.substring(password.length, c.length);
+        }
+      }
+      this.GetAllUsers();
+    },
+    async GetAllUsers() {
+      var requestOptions = {
+        method: "GET",
+        redirect: "follow"
+      };
+
+      await fetch("http://localhost:8000/api/users", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log((this.users = JSON.parse(result))))
+        .catch(error => console.log("error", error));
+
+      this.users = this.users.find(user => user.email === this.email);
+
+      if (this.users == undefined) {
+        console.log("email existe pas");
+      } else {
+        this.id = this.users.id;
+        this.LoginVerifie();
+      }
+    },
+    async LoginVerifie() {
+      var requestOptions = {
+        method: "GET",
+        redirect: "follow"
+      };
+
+      await fetch(`http://localhost:8000/api/users/${this.id}`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log((this.user = JSON.parse(result))))
+        .catch(error => console.log("error", error));
+
+      if (this.password == this.user.password) {
+        this.pdp = true;
+      } else {
+        console.log("code mauvais");
+      }
+    }
+  }
+};
 </script>
 
 <style scoped>

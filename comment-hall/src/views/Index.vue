@@ -5,7 +5,6 @@
       <Menu />
       <div v-if="!load">
         {{ getpost() }}
-        {{ getCookie() }}
       </div>
       <div class="main">
         <div class="main-top">
@@ -74,21 +73,6 @@ export default {
     },
     show(index) {
       window.location.href = `/post/${index}`;
-    },
-    getCookie() {
-      var name = "email=";
-      var decodedCookie = decodeURIComponent(document.cookie);
-      var ca = decodedCookie.split(";");
-      for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == " ") {
-          c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-          console.log(c.substring(name.length, c.length));
-        }
-      }
-      console.log("fail");
     }
   }
 };
