@@ -29,6 +29,12 @@
           <div class="box1">
             <div class="décal">
               <input
+                @change="updateProfile"
+                type="file"
+                name="photo"
+                accept="image/*"
+              />
+              <input
                 type="text"
                 placeholder="Username"
                 class="text"
@@ -97,7 +103,9 @@ export default {
       passwordreg: "",
       email: "",
       emailreg: "",
-      crypt: ""
+      crypt: "",
+      imageSrc: "",
+      re: /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     };
   },
   methods: {
@@ -117,17 +125,51 @@ export default {
         this.passwordconf != "" &&
         this.usernamereg != ""
       ) {
-        if (this.passwordreg == this.passwordconf) {
-          this.register();
+        if (this.re.test(this.emailreg)) {
+          if (this.passwordreg == this.passwordconf) {
+            this.crypt = CryptoJS.MD5(this.passwordreg).toString();
+            this.register();
+          } else {
+            console.log("autre");
+          }
         } else {
-          console.log("autre");
+          console.log("pasmail");
         }
       } else {
         console.log("manque");
       }
     },
+    updateProfile(e) {
+      let file = e.target.files[0];
+      let reader = new FileReader();
+      reader.onloadend = e => {
+        this.imageSrc = reader.result;
+        console.log(e);
+        this.string();
+      };
+      reader.readAsDataURL(file);
+    },
+    string() {
+      var n = this.imageSrc.indexOf(",");
+      this.imageSrc = this.imageSrc.substring(n + 1);
+    },
     register() {
-      console.log(CryptoJS.MD5(this.passwordreg).toString());
+      var formdata = new FormData();
+      formdata.append("username", this.usernamereg);
+      formdata.append("email", this.emailreg);
+      formdata.append("password", this.crypt);
+      formdata.append("pdp", this.imageSrc);
+
+      var requestOptions = {
+        method: "POST",
+        body: formdata,
+        redirect: "follow"
+      };
+
+      fetch("http://localhost:8000/api/users", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log("error", error));
     }
   }
 };
