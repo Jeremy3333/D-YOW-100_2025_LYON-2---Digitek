@@ -151,7 +151,7 @@ export default {
       var n = this.imageSrc.indexOf(",");
       this.imageSrc = this.imageSrc.substring(n + 1);
     },
-    register() {
+    async register() {
       var formdata = new FormData();
       formdata.append("username", this.usernamereg);
       formdata.append("email", this.emailreg);
@@ -164,11 +164,13 @@ export default {
         redirect: "follow"
       };
 
-      fetch("http://localhost:8000/api/users", requestOptions)
+      await fetch("http://localhost:8000/api/users", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log("error", error))
-        .finally(this.Cookiereg());
+        .finally();
+
+      this.Cookiereg();
     },
     Cookiereg() {
       document.cookie = `email=${this.emailreg}; SameSite=None; Secure`;
