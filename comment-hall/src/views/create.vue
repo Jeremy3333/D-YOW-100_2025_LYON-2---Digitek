@@ -65,7 +65,7 @@ export default {
       };
       reader.readAsDataURL(file);
     },
-    getCookie() {
+    getCookies() {
       var name = "username=";
       var decodedCookie = decodeURIComponent(document.cookie);
       var ca = decodedCookie.split(";");
@@ -84,7 +84,7 @@ export default {
       this.image = this.imageSrc.substring(n + 1);
       console.log(this.image);
     },
-    post() {
+    async post() {
       if (
         this.image != "" &&
         this.title != "" &&
@@ -106,11 +106,13 @@ export default {
           redirect: "follow"
         };
 
-        fetch("http://localhost:8000/api/post", requestOptions)
+        await fetch("http://localhost:8000/api/post", requestOptions)
           .then(response => response.text())
           .then(result => console.log(result))
           .catch(error => console.log("error", error))
-          .finally(this.redirect());
+          .finally();
+
+        this.redirect();
       } else {
         console.log("il manque");
       }
